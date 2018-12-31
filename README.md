@@ -48,3 +48,6 @@ The SSL enabled VirtualHost references the SSL certificate files in the /etc/htt
 
 The image symlinks access_log to /dev/stdout and error_log to /dev/stderr, both of these are located in the default CentOS Apache log directory (/var/log/httpd).  This will make `docker logs` work.  If you really want to separate the logs you can bind mount /var/log/httpd to your host, the result will be `docker logs` not producing output, but you will be able to tail just the access_log or error_log on your local host.
 
+### XDebug Profiler
+
+This directory is a combination of a set of environment variables as well as a bind mount.  If you are using the profiler, you can set XDEBUG_PROFILE_OUTPUT_DIR to a directory that is bind mounted to the host.  That way you can inspect the result of the profile in the viewer of your choice.
