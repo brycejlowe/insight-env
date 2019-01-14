@@ -10,7 +10,7 @@ NOTE: XDebug is installed via PECL but it isn't active by default.
 | Variable Name | Valid Value(s) | Default Value | Configuration Value | Notes |
 |---|---|---|---|---|
 |APACHE_SERVER_NAME|`string`|localhost|ServerName|Sets the Apache ServerName variable in global context|
-|APP_ENV|`development,staging,production`|development|SetEnv INSIGHT_ENV|Sets the Insight environment|
+|APP_ENV|`development,staging,production`|development|SetEnv INSIGHT_ENV|Sets the Insight environment, if development the php.ini DISPLAY_ERRORS statement will be set to ALL, otherwise it is OFF.|
 |XDEBUG_REMOTE_ENABLE|`1,0`|0|xdebug.remote_enable|Enables the remote debugger and if necessary the XDebug extension|
 |XDEBUG_REMOTE_HANDLER|`string`|dbgp|xdebug.remote_handler|Sets the debugger protocol, you should leave this at it's default value|
 |XDEBUG_REMOTE_IP|`string`|127.0.0.1|xdebug.remote_host|The remote host (IP or DNS name) to send the send the debug info (PC or Mac should be host.docker.internal, that's the DNS name of the host PC)|

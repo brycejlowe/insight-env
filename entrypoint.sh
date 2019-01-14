@@ -9,6 +9,17 @@ cp /etc/httpd.custom/$(basename ${APACHE_SITE_PATH}) ${APACHE_SITE_PATH}
 sed -i "s,@APP_ENV,${APP_ENV},g" ${APACHE_SITE_PATH}
 sed -i "s,@APACHE_SERVER_NAME,${APACHE_SERVER_NAME},g" ${APACHE_SITE_PATH}
 
+# set the debug level in php.ini
+PHP_INI_PATH="/etc/php.ini"
+PHP_DISPLAY_ERRORS="display_errors = Off"
+PHP_DISPLAY_STARTUP_ERRORS="display_startup_errors = 0"
+if [[ "${APP_ENV}" == "development" ]]; then
+    PHP_DISPLAY_ERRORS="display_errors = E_ALL"
+    PHP_DISPLAY_STARTUP_ERRORS="display_startup_errors = 1"
+fi
+sed -i "s,display_errors\s=.*,${PHP_DISPLAY_ERRORS},g" ${PHP_INI_PATH}
+sed -i "s,display_startup_errors\s=.*,${PHP_DISPLAY_STARTUP_ERRORS},g" ${PHP_INI_PATH}
+
 # remove custom configuration
 rm -rf /etc/php.d/*-custom.ini
 
