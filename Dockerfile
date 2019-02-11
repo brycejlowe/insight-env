@@ -52,11 +52,6 @@ COPY ./php/php.ini /etc/php.ini
 RUN mkdir -pv /etc/php.custom
 COPY ./php/options/* /etc/php.custom/
 
-# add the yubikey library
-RUN curl https://developers.yubico.com/php-yubico/Releases/Auth_Yubico-2.5.tgz -o /root/Auth_Yubico-2.5.tgz && \
-     pear install /root/Auth_Yubico-2.5.tgz && \
-     rm -rf /root/Auth_Yubico-2.5.tgz
-
 # setup environment variables
 ENV APACHE_SERVER_NAME=localhost
 ENV APP_ENV=development
