@@ -15,6 +15,7 @@ NOTE: XDebug is installed via PECL but it isn't active by default.
 |XDEBUG_REMOTE_HANDLER|`string`|dbgp|xdebug.remote_handler|Sets the debugger protocol, you should leave this at it's default value|
 |XDEBUG_REMOTE_IP|`string`|127.0.0.1|xdebug.remote_host|The remote host (IP or DNS name) to send the send the debug info (PC or Mac should be host.docker.internal, that's the DNS name of the host PC)|
 |XDEBUG_REMOTE_PORT|`integer`|9000|xdebug.remote_port|The port to send debug info to|
+|XDEBUG_REMOTE_AUTOSTART|`integer`|`1,0`|xdebug.remote_autostart|Enable remote auto-start for XDEBUG (don't require a COOKIE/GET/POST parameter to start a debug session)|
 |XDEBUG_IDE_KEY|`string`|IDE_KEY|xdebug.idekey|The COOKIE/GET/POST parameter value to trigger the debug session|
 |XDEBUG_LOG_PATH|`string`||xdebug.remote_log|The location of the xdebug log file, if it is blank the log is disabled|
 |XDEBUG_PROFILE_ENABLE_TRIGGER|`1,0`|0|xdebug.profiler_enable_trigger|Enables the profiler and if necessary the XDebug extension|
